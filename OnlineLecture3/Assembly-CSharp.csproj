@@ -66,8 +66,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BackgroundBehavior.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\NoteBehavior.cs" />
     <Compile Include="Assets\Scripts\NoteController.cs" />
-    <Compile Include="Assets\Scripts\Notebehavior.cs" />
+    <Compile Include="Assets\Scripts\ObjectPooler.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/duel/programing/Unity/OnlineLecture2/lecturelearning2/OnlineLecture3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

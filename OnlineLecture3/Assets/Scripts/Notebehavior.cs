@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Notebehavior : MonoBehaviour
+public class NoteBehavior : MonoBehaviour
 {
 
     public int noteType;
@@ -17,6 +17,11 @@ public class Notebehavior : MonoBehaviour
         else if (noteType == 4) KeyCode = KeyCode.K;
     }
 
+    public void Initialize()
+    {
+        judge = GameManager.judges.NONE;
+    }
+
     void Update()
     {
         transform.Translate(Vector3.down * GameManager.instance.noteSpeed);
@@ -25,7 +30,7 @@ public class Notebehavior : MonoBehaviour
         {
             Debug.Log(judge);
             // 노트가 판정선에 닿기 시작한 이후로는 해당 노트를 제거합니다.
-            if (judge != GameManager.judges.NONE) Destroy(gameObject);
+            if (judge != GameManager.judges.NONE) gameObject.SetActive(false);
         }
     }
 
@@ -47,7 +52,7 @@ public class Notebehavior : MonoBehaviour
         else if (other.gameObject.tag == "Miss Line")
         {
             judge = GameManager.judges.MISS;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
